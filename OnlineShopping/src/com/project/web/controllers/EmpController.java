@@ -19,6 +19,7 @@ import com.project.core.services.EmpService;
 public class EmpController {
 	
 	@Autowired
+	//todo please fix this error
 	private EmpService service;
 	
 
