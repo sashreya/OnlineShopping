@@ -28,8 +28,7 @@ public class OsServiceImpl implements OsService {
 	
 	@Override
 	@Transactional(propagation=Propagation.NEVER)
-	public List<Product> showAllProduct() throws OsException {
-	
+	public List<Product> showAllProduct() throws OsException {	
 		return dao.getAllProducts();
 	}
 
