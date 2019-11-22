@@ -9,8 +9,8 @@ import javax.persistence.Id;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-@Component
-@Scope(scopeName = "prototype")
+/*@Component
+@Scope(scopeName = "prototype")*/
 @Entity(name="customer")
 public class Customer {
 	@Id

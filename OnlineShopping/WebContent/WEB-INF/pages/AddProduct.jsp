@@ -101,8 +101,11 @@ a {
 
     <label for="QUANTITY"><b>Quantity</b></label>
     <input type="number" maxlength="20" placeholder="Enter number of items" name="quantity"   id="quantity"required>
-    <hr>
-    
+  
+	<label for="productImage">Product Image</label>
+	<input type="file" id="productImage"/>
+ 	 </div>
+
     <button type="submit" class="registerbtn" value="addProduct" >Add Product</button>
 </form>
 </body>

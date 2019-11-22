@@ -19,6 +19,7 @@
  <th>category</th>
  <th>productStatus</th>
  <th> quantity</th>
+ <th>productImage</th>
  </tr>
  
  <c:forEach items="${productList}" var="prods">
@@ -31,6 +32,7 @@
  <td>${prods.category }</td>
  <td>${prods.productStatus }</td>
  <td>${prods.quantity}</td>
+ <td><img src="<c:url value="/resource/images/${prods.productId}.jpg"/>" width="40%" alt="${prods.productName}" /></td>
  </tr>
  </c:forEach>
  </table>

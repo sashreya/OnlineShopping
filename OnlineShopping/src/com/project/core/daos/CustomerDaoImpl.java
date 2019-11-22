@@ -11,7 +11,11 @@ import org.springframework.stereotype.Repository;
 import com.project.core.entities.Customer;
 import com.project.core.exception.CustException;
 
-
+/**
+ * 
+ * @author SoleMates
+ *
+ */
 @Repository("customerDao")
 public class CustomerDaoImpl implements CustomerDao {
 

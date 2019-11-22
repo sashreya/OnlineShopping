@@ -44,14 +44,6 @@ public class CustomerServiceImpl implements CustomerService {
 		}
 		
 	}
-	/*
-	 * @Override public Boolean loginCustomer(String username, String password) {
-	 * Customer cust1 = new Customer(); cust1=cdao.getCustomerByMail(username);
-	 * //String user = cust1.getCustomerMail(); String pass =
-	 * cust1.getCustomerPassword(); if(pass.contentEquals(password)) { return true;
-	 * } else { return false; } }
-	 * 
-	 */
 
 	@Override
 	public Customer loginCustomer(String username) {
