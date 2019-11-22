@@ -44,12 +44,21 @@ public class CustomerServiceImpl implements CustomerService {
 		}
 		
 	}
+	/*
+	 * @Override public Boolean loginCustomer(String username, String password) {
+	 * Customer cust1 = new Customer(); cust1=cdao.getCustomerByMail(username);
+	 * //String user = cust1.getCustomerMail(); String pass =
+	 * cust1.getCustomerPassword(); if(pass.contentEquals(password)) { return true;
+	 * } else { return false; } }
+	 * 
+	 */
 
 	@Override
-	public Customer get(String username, String password) {
-		// TODO Auto-generated method stub
-		return null;
+	public Customer loginCustomer(String username) {
+		Customer cust1 = new Customer();
+		cust1=cdao.getCustomerByMail(username);
+		return cust1;
 	}
-
+	
 	
 }

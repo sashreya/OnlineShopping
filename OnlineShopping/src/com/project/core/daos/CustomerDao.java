@@ -11,5 +11,5 @@ import com.project.core.exception.OsException;
 public interface CustomerDao {
 	public List<Customer> getAllCustomers() throws CustException ;
 	public int insertNewCustomer(Customer cust) throws CustException;
-	public Customer validateCustomer(String username, String password);
+	public Customer getCustomerByMail(String username);
 }

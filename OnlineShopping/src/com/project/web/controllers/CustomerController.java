@@ -6,6 +6,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.hibernate.ScrollableResults;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -69,13 +70,40 @@ public class CustomerController {
 		}
 		return "Error";
 	}
+	/*
+	 * private static int queryTatalCountByScrollableResults(Query query) {
+	 * ScrollableResults scrollableResults = query.scroll();
+	 * scrollableResults.last(); return scrollableResults.getRowNumber() + 1; }
+	 */
+
+	//http://localhost:9090/OnlineShopping/login.shop
+	@RequestMapping(path="login.shop", method=RequestMethod.GET)
+	public String LoginCustomerPage(){
+		return "Login";
+	}
 	
-	public String registration(Customer cus,@RequestParam("mail")String username ,@RequestParam("pass")String password,HttpSession session,HttpServletRequest request,Map model)
+	@RequestMapping(path="login.shop", method=RequestMethod.POST)
+	public String login(@RequestParam("customerMail")String customerMail ,@RequestParam("customerPassword")String customerPassword,HttpSession session,HttpServletRequest request)
 	{
-		Customer register=cservice.get(username,password);
-		model.put("cus",register);
-		String em=register,get
-		return password;
+		//Customer cust2 = new Customer();
+		//cust2.setCustomerMail(customerMail);
+		//cust2.setCustomerPassword(customerPassword);
+		Customer cust = cservice.loginCustomer(customerMail);
+		if(cust.getCustomerPassword().contentEquals(customerPassword)) {
+			return "Login Sussessful";
+		}
+		else {
+			return "Login Unsussful";
+		}
+		/*model.put(key, value)("cus",register);
+		String user=register.getCustomerMail();
+		String pass=register.getCustomerPassword();
+		 Boolean var=cservice.loginCustomer(customerMail, customerPassword);
+		
+		
+		for(int i=0; i<)
+		if(user.equals(anObject))
+		return password;*/
 	}
 
 }

@@ -10,6 +10,6 @@ import com.project.core.exception.OsException;
 public interface CustomerService {
 	public List<Customer> showAllCustomer() throws CustException;
 	public boolean addCustomer(Customer cust) throws CustException;
-	public Customer get(String username, String password);
-
+	//public Boolean loginCustomer(String username, String password);
+	public Customer loginCustomer(String username);
 }

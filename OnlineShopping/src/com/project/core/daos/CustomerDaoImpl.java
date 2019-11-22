@@ -14,8 +14,8 @@ import com.project.core.exception.CustException;
 
 @Repository("customerDao")
 public class CustomerDaoImpl implements CustomerDao {
-	
-	
+
+
 	public CustomerDaoImpl() {
 		super();
 	}
@@ -30,7 +30,7 @@ public class CustomerDaoImpl implements CustomerDao {
 		return CustomerList;
 	}
 
-	
+
 	@Override
 	public int insertNewCustomer(Customer cust) throws CustException {
 		// TODO Auto-generated method stub
@@ -40,16 +40,15 @@ public class CustomerDaoImpl implements CustomerDao {
 
 
 	@Override
-	public Customer validateCustomer(String username, String password) {
-		Query qry2 = manager.createQuery("select c from customer c where c.customerMail= :user and c.customerPassword= :pass");
-		qry2.setParameter("user", username);
-		qry2.setParameter("pass", password);
-		return (Customer)qry2.getSingleResult();
+	public Customer getCustomerByMail(String username) {
+		Query qry2 = manager.createQuery("select c from customer c where c.customerMail= :user");
+		qry2.setParameter("user", username);		
+		return (Customer)(qry2.getSingleResult());
 	}
 
 
 
 
 
-	
+
 }
