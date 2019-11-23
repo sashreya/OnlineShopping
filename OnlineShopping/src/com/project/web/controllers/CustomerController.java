@@ -1,27 +1,16 @@
 package com.project.web.controllers;
 
-import java.util.List;
-import java.util.Map;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-
-import org.hibernate.ScrollableResults;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.view.RedirectView;
-
 import com.project.core.entities.Customer;
-import com.project.core.entities.Product;
 import com.project.core.exception.CustException;
-import com.project.core.exception.OsException;
 import com.project.core.services.CustomerService;
-
-import oracle.net.ano.Service;
 
 @Controller
 public class CustomerController {
@@ -43,10 +32,10 @@ public class CustomerController {
 		return mAndV;
 	}
 
-	/*
-	 * @RequestMapping(path="/") public String homePage(){ return "Home"; }
-	 */
-	//http://localhost:9090/OnlineShopping/registration.shop
+	
+	  @RequestMapping(path="/") public String homePage(){ return "Home"; }
+	 
+	//http://localhost:8756/OnlineShopping/registration.shop
 	@RequestMapping(path="registration.shop", method=RequestMethod.GET)
 	public String registerCustomerPage(){
 		return "Registration";
@@ -94,5 +83,19 @@ public class CustomerController {
 			return "username wrong";
 		}		
 	}
-
+	@RequestMapping(path="forgetPass.shop", method = RequestMethod.GET)
+	public String forgotPassword() {
+		return "forgetPassword";
+	}
+	@RequestMapping(path="forgetPass.shop", method=RequestMethod.POST)
+	public String forgetPass(@RequestParam("customerMail")String customerMail ,@RequestParam("customerPassword")String customerPassword)
+	{		
+		int result = cservice.ForgetPassword(customerMail, customerPassword);
+		if(result>0){
+			return "redirect:login.shop";
+		}
+		return "password not updated";
+		
+		
+	}
 }

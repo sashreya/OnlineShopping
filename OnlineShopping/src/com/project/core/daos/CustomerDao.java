@@ -12,4 +12,5 @@ public interface CustomerDao {
 	public List<Customer> getAllCustomers() throws CustException ;
 	public int insertNewCustomer(Customer cust) throws CustException;
 	public Customer getCustomerByMail(String username);
+	public int updateCustomerPassword(String username, String newPass);
 }

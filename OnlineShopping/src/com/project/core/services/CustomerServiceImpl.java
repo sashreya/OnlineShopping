@@ -46,10 +46,21 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
+	@Transactional
 	public Customer loginCustomer(String username) {
 		Customer cust1 = new Customer();
 		cust1=cdao.getCustomerByMail(username);
 		return cust1;
+	}
+
+	@Override
+	@Transactional
+	public int ForgetPassword(String username, String newPassword) {
+		/*
+		 * Customer cust2 = new Customer(); cust2=cdao.updateCustomerPassword(username,
+		 * newPassword);
+		 */
+		return cdao.updateCustomerPassword(username, newPassword);
 	}
 	
 	

@@ -36,9 +36,9 @@ public ModelAndView getproductList() throws OsException  {
 	return mAndV;
 }
 
-	/*
-	 * @RequestMapping(path="/") public String homePage(){ return "Home"; }
-	 */
+	
+	  //@RequestMapping(path="/") public String homePage(){ return "Home"; }
+	 
 ///http://localhost:9090/OnlineShopping/addProduct.shop
 @RequestMapping(path="addProduct.shop", method=RequestMethod.GET)
 public String addProductPage(){

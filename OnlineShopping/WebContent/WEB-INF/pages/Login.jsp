@@ -68,7 +68,7 @@ span.psw {
 
   <div class="container" style="background-color:#f1f1f1">
 
-    <span class="psw">Forgot <a href="#">password?</a></span>
+    <span class="psw">Forgot <a href="forgetPass.shop">password?</a></span>
   </div>
 </form>
 
