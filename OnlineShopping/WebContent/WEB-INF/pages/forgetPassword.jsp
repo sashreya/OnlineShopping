@@ -52,27 +52,25 @@ span.psw {
 </head>
 <body>
 <h2>Forgot Password</h2>
-<form action="forgetPass.shop" method="post">  
+<form action="validate.shop">  
   <div class="container">
-    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="customerMail" required>
+  	<!-- <label for="mail"><b>Please</b></label>
+    <input type="text" placeholder="Enter mail again sorry" name="customerMail" required>
+   -->
+    <label for="otp"><b>OTP</b></label>
+    <input type="text" placeholder="Enter OTP" name="otp2" required>
 
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="customerPassword" required>
 
     <label for="psw-repeat"><b>Repeat Password</b></label>
     <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-
-    <label for="otp"><b>OTP</b></label><br>
-    <input type="text" style="width: 20%" placeholder="Enter OTP" name="genotp" >
-
-    <button type="button" name="otp" style="width: 20%" >Generate OTP</button>
-        
+         
     <button type="submit">Submit</button>   
   </div>
 </form>
 <script>
-  function ValidateEmail(inputText)
+  function ValidateEmail(inputText) 
 {
 var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 if(inputText.value.match(mailformat))

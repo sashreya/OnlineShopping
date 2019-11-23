@@ -51,26 +51,31 @@ span.psw {
 </style>
 </head>
 <body>
-<h2>Login Form</h2>
-
-<form action="login.shop" method="post">
-  
+<h2>Forgot Password</h2>
+<form action="mailotp.shop" method="post">  
   <div class="container">
-    <label for="customerMail"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="customerMail" id="customerMail" required>
-
-    <label for="customerPassword"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="customerPassword" id="customerPassword" required>
-        
-    <button type="submit">Login</button>
-   
-  </div>
-
-  <div class="container" style="background-color:#f1f1f1">
-
-    <span class="psw">Forgot <a href="mail.shop">password?</a></span>
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="emailToRecipient" required> 
+    <button type="submit" name="otp" style="width: 20%" >Generate OTP</button>   
+    <!-- <button type="submit">Submit</button>  -->  
   </div>
 </form>
-
+<script>
+  function ValidateEmail(inputText) 
+{
+var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+if(inputText.value.match(mailformat))
+{
+document.form1.text1.focus();
+return true;
+}
+else
+{
+alert("You have entered an invalid email address!");
+document.form1.text1.focus();
+return false;
+}
+}
+</script>
 </body>
 </html>
